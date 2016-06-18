@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 OS="$(uname)"
-if [[ "$OS" -eq 'Darwin' ]]; then
+if [[ "$OS" == 'Darwin' ]]; then
   DEPLOY_ENV=development
   compose_override_file="${DEPLOY_ENV}.yml"
   echo "Using docker-compose override file: ${compose_override_file}"
