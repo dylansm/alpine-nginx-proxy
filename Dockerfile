@@ -1,5 +1,5 @@
-FROM ej52/alpine-nginx:latest
-MAINTAINER Elton Renda "https://github.com/ej52"
+FROM dylansm/alpine-nginx:latest
+MAINTAINER Dylan Smith "https://github.com/dylansm"
 
 # Configure Nginx and apply fix for very long server names
 RUN sed -i 's/^http {/&\n    server_names_hash_bucket_size 128;/g' /etc/nginx/nginx.conf
