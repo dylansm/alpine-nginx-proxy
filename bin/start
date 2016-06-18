@@ -11,6 +11,10 @@ fi
 
 docker_name="proxy"
 
-docker-compose -p "${docker_name}" -f docker-compose.yml -f "$compose_override_file" up -d
+if [[ "$DEPLOY_ENV" == 'production' ]]; then
+  docker-compose -p "${docker_name}" -f docker-compose.yml -f up -d
+else
+  docker-compose -p "${docker_name}" -f docker-compose.yml -f "$compose_override_file" up -d
+fi
 
 printf "\n${Blue}Proxy Started${Plain}\n"
