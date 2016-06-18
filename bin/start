@@ -12,7 +12,7 @@ fi
 docker_name="proxy"
 
 if [[ "$DEPLOY_ENV" == 'production' ]]; then
-  docker-compose -p "${docker_name}" -f docker-compose.yml -f up -d
+  docker-compose -p "${docker_name}" -f docker-compose.yml up -d
 else
   docker-compose -p "${docker_name}" -f docker-compose.yml -f "$compose_override_file" up -d
 fi
