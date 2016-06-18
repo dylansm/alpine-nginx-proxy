@@ -9,10 +9,8 @@ docker_name="proxy"
 
 if [[ -f "${compose_override_file}" ]]; then
   echo "Using docker-compose override file: ${compose_override_file}"
-  # docker-compose -p "${docker_name}${DEPLOY_ENV}" -f docker-compose.yml -f "$compose_override_file" up -d
   docker-compose -p "${docker_name}" -f docker-compose.yml -f "$compose_override_file" up -d
 else
-  # docker-compose -p "${docker_name}${DEPLOY_ENV}" up -d
   docker-compose -p "${docker_name}" up -d
 fi
 
